@@ -2,6 +2,7 @@ from tkinter import *
 root = Tk()
 root.title("Hello Test")
 root.geometry('800x500+600+200')
+
 #root.iconbitmap('./win.ico')
 #上
 frmTop = Frame(root,width=800,height=400,bg='green')
