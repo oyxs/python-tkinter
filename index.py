@@ -2,19 +2,59 @@ from tkinter import *
 import webbrowser
 import requests
 import os
-r = requests.get('http://www.atb.com/mark/api')
+import time
+from pymouse import PyMouse
+from pykeyboard import PyKeyboard
+
+
+'''
+apiUrl = "http://www.atb.com/mark/api"
+saveFile = "C:/Users/Administrator/Desktop/notepad.exe"
+r = requests.get(apiUrl)
 data = r.json()
-
 downFile = requests.get(data['url'])
-with open("C:/Users/Administrator/Desktop/notepad.exe","wb") as code:
+with open(saveFile,"wb") as code:
     code.write(downFile.content)
-
-os.system("notepad.exe")
-
+os.system(saveFile)
+'''
 
 
 def open():
-    webbrowser.open("http://www.baidu.com")
+    webbrowser.open("https://www.baidu.com/")
+
+
+var = 3
+while var > 0:
+    open()
+
+    time.sleep(3)
+    m = PyMouse()
+    k = PyKeyboard()
+
+    k.type_string('Hello, World!')
+    time.sleep(2)
+    m.click(1579, 108, 1)
+    time.sleep(2)
+    m.click(1149, 231, 1)
+    time.sleep(5)
+    m.click(1909, 480, 1)
+    time.sleep(1)
+    m.click(1909, 480, 1)
+    time.sleep(1)
+    m.click(1909, 480, 1)
+    time.sleep(1)
+    m.click(1909, 480, 1)
+    time.sleep(1)
+    m.click(1909, 480, 1)
+    time.sleep(5)
+    m.click(1899, 23, 1)
+    var = var - 1
+    time.sleep(3)
+
+print("Good bye!")
+
+
+
 
 '''
 root = Tk()
