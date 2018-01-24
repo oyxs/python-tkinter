@@ -5,11 +5,6 @@ import requests
 def open():
     webbrowser.open("http://www.baidu.com")
 
-def down():
-    url = 'http://wap.huila88.com/down/360se6.7zs'
-    r = requests.get(url)
-    with open("demo3.zip", "wb") as code:
-        code.write(r.content)
 
 
 
@@ -39,10 +34,10 @@ frmTopLeftTopLeft.pack(side=LEFT)
 #上左上中
 frmTopLeftTopCenter = Frame(frmTopLeftTop,width=150,height=260,bg='#377AC3')
 frmTopLeftTopCenter.pack(side=LEFT)
-#上左上右
+#上左上右 按钮
 frmTopLeftTopRight = Frame(frmTopLeftTop,width=300,height=260,bg='#5C616F')
 frmTopLeftTopRight.pack(side=LEFT)
-Button(frmTopLeftTopRight,text='A',width=20,height=5,command=down).pack()
+Button(frmTopLeftTopRight,text='A',width=20,height=5,command=open).pack()
 
 #上左下
 frmTopLeftFoot = Frame(frmTopLeft,width=600,height=80,bg='#D2E3F5')
@@ -55,6 +50,7 @@ frmTopRight.pack(side=LEFT)
 #下
 frmFoot = Frame(root,width=800,height=100,bg='#1AC33B')
 frmFoot.pack(side=TOP)
+
 
 
 
